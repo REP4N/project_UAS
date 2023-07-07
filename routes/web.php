@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
+
+
+Route::get('/products/export', [ProductController::class, 'export'])->name('products.export');
+Route::get('/products/import', [ProductController::class, 'import'])->name('products.import');
+Route::post('/products/import', [ProductController::class, 'handleImport'])->name('products.handleImport');
+Route::resource('/products', ProductController::class);

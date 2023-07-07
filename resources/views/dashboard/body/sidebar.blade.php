@@ -78,7 +78,7 @@
 
             <!-- Sidenav Heading (Products)-->
             <div class="sidenav-menu-heading">Products</div>
-            <a class="nav-link {{ Request::is('products*') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ Request::is('products*') ? 'active' : '' }}" href="{{ route('products.index') }}">
                 <div class="nav-link-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
                 Products
             </a>
