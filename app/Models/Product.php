@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Kyslik\ColumnSortable\Sortable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-    use HasFactory, Sortable;
+    use HasFactory;
 
     protected $fillable = [
         'product_name',
