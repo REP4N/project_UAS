@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -23,12 +24,31 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
+Route::get('login', [ProfileController::class, 'index'])->name('login');
+Route::post('post-login', [ProfileController::class, 'postLogin'])->name('login.post');
+Route::get('registration', [ProfileController::class, 'registration'])->name('register');
+Route::post('post-registration', [ProfileController::class, 'postRegistration'])->name('register.post');
+Route::get('logout', [ProfileController::class, 'logout'])->name('logout');
 
-Route::get('/products/export', [ProductController::class, 'export'])->name('products.export');
-Route::get('/products/import', [ProductController::class, 'import'])->name('products.import');
-Route::post('/products/import', [ProductController::class, 'handleImport'])->name('products.handleImport');
-Route::resource('/products', ProductController::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/settings', [ProfileController::class, 'settings'])->name('profile.settings');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-Route::resource('/users', UserController::class)->except(['show']);
-Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
+
+    // Route Products
+    Route::get('/products/export', [ProductController::class, 'export'])->name('products.export');
+    Route::get('/products/import', [ProductController::class, 'import'])->name('products.import');
+    Route::post('/products/import', [ProductController::class, 'handleImport'])->name('products.handleImport');
+    Route::resource('/products', ProductController::class);
+
+
+    
+
+    // User Management
+    Route::resource('/users', UserController::class)->except(['show']);
+    Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
+});
+
