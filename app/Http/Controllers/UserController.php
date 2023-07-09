@@ -22,7 +22,7 @@ class UserController extends Controller
         }
 
         $users = User::filter(request(['search']))
-            ->sortable()
+            // ->sortable()
             ->paginate($row)
             ->appends(request()->query());
 
