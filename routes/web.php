@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,7 @@ Route::get('/products/export', [ProductController::class, 'export'])->name('prod
 Route::get('/products/import', [ProductController::class, 'import'])->name('products.import');
 Route::post('/products/import', [ProductController::class, 'handleImport'])->name('products.handleImport');
 Route::resource('/products', ProductController::class);
+
+
+Route::resource('/users', UserController::class)->except(['show']);
+Route::put('/user/change-password/{username}', [UserController::class, 'updatePassword'])->name('users.updatePassword');
