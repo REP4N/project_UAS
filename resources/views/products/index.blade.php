@@ -22,7 +22,7 @@
 
             <nav class="mt-4 rounded" aria-label="breadcrumb">
                 <ol class="breadcrumb px-3 py-2 rounded mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
                     <li class="breadcrumb-item active">Products</li>
                 </ol>
             </nav>
@@ -92,11 +92,11 @@
                                 <tr>
                                     <th scope="col">No.</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">@sortablelink('product_name', 'Product Name')</th>
-                                    <th scope="col">@sortablelink('category.name', 'category')</th>
-                                    <th scope="col">@sortablelink('stock')</th>
-                                    <th scope="col">@sortablelink('unit.name', 'unit')</th>
-                                    <th scope="col">@sortablelink('selling_price', 'Price')</th>
+                                    <th scope="col">('product_name', 'Product Name')</th>
+                                    <th scope="col">('category.name', 'category')</th>
+                                    <th scope="col">('stock')</th>
+                                    <th scope="col">('unit.name', 'unit')</th>
+                                    <th scope="col">('selling_price', 'Price')</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

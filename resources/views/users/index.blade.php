@@ -20,7 +20,7 @@
 
             <nav class="mt-4 rounded" aria-label="breadcrumb">
                 <ol class="breadcrumb px-3 py-2 rounded mb-0">
-                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="Dashboard">Dashboard</a></li>
                     <li class="breadcrumb-item active">Users</li>
                 </ol>
             </nav>
@@ -89,9 +89,9 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th scope="col">@sortablelink('name')</th>
-                                    <th scope="col">@sortablelink('username')</th>
-                                    <th scope="col">@sortablelink('email')</th>
+                                    <th scope="col">name</th>
+                                    <th scope="col">username</th>
+                                    <th scope="col">email</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

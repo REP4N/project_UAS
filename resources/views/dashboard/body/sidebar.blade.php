@@ -4,7 +4,7 @@
         <div class="nav accordion" id="accordionSidenav">
             <!-- Sidenav Menu Heading (Core)-->
             <div class="sidenav-menu-heading">Core</div>
-            <a class="nav-link {{ Request::is('dashboard*') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ Request::is('dashboard*') ? 'active' : '' }}" href="dashboard">
                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                 Dashboard
             </a>

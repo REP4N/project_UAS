@@ -6,7 +6,7 @@
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
     <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="#">Inventory</a>
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="dashboard">Inventory</a>
     <!-- Navbar Search Input-->
     <!-- * * Note: * * Visible only on and above the lg breakpoint-->
     <form class="form-inline me-auto d-none d-lg-block me-3">
@@ -30,15 +30,15 @@
                     </div>
                 </h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/profile">
+                <a class="dropdown-item" href="{{ route('profile.edit') }}">
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                     Account
                 </a>
 
                 <!-- Logout -->
-                <form action="#" method="POST">
+                <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button class="dropdown-item" action="#" method="POST" onclick="return confirm('Are you sure you want to logout?')">
+                    <button class="dropdown-item" action="{{ route('logout') }}" method="POST" onclick="return confirm('Are you sure you want to logout?')">
                         <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                         Logout
                     </button>

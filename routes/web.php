@@ -24,11 +24,7 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
-// Route::get('login', [ProfileController::class, 'edit'])->name('profile.edit');
-// Route::post('post-login', [ProfileController::class, 'postLogin'])->name('login.post');
-// Route::get('registration', [ProfileController::class, 'registration'])->name('register');
-// Route::post('post-registration', [ProfileController::class, 'postRegistration'])->name('register.post');
-// Route::get('logout', [ProfileController::class, 'logout'])->name('logout');
+
 
 // Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
