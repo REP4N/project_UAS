@@ -70,7 +70,7 @@
                 <div class="card-body px-5 py-4">
                     <div class="small text-center">
                         New user?
-                        <a href="{{ route('register') }}">Create an account!</a>
+                        <a href="{{ route('register') }}">Creates an account!</a>
                     </div>
                 </div>
             </div>
