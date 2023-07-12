@@ -45,11 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public $sortable = [
-    //     'name',
-    //     'email',
-    //     'username',
-    // ];
+    public $sortable = [
+        'name',
+        'email',
+        'username',
+    ];
 
     public function scopeFilter($query, array $filters)
     {

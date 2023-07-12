@@ -27,7 +27,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');

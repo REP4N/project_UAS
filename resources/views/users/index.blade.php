@@ -20,7 +20,7 @@
 
             <nav class="mt-4 rounded" aria-label="breadcrumb">
                 <ol class="breadcrumb px-3 py-2 rounded mb-0">
-                    <li class="breadcrumb-item"><a href="Dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                     <li class="breadcrumb-item active">Users</li>
                 </ol>
             </nav>

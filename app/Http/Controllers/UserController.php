@@ -53,7 +53,7 @@ class UserController extends Controller
             'password_confirmation' => 'same:password|min:6',
         ];
 
-        // $validatedData = $request->validate($rules);
+        $validatedData = $request->validate($rules);
         $validatedData['password'] = Hash::make($request->password);
 
         /**
@@ -70,7 +70,7 @@ class UserController extends Controller
             $validatedData['photo'] = $fileName;
         }
 
-        // User::create($validatedData);
+        User::create($validatedData);
 
         return Redirect::route('users.index')->with('success', 'New User has been created!');
     }
