@@ -8,7 +8,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}" />
-        <title>Inventory Management System</title>
+        <title>Inventory Barang Management System</title>
 
         <!-- Style CSS -->
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
@@ -27,22 +27,6 @@
                 </main>
             </div>
 
-            <!-- BEGIN: Footer -->
-            <div id="layoutAuthentication_footer">
-                <footer class="footer-admin mt-auto footer-dark">
-                    <div class="container-xl px-4">
-                        <div class="row">
-                            <div class="col-md-6 small">Copyright © Inventory <script>document.write(new Date().getFullYear())</script></div>
-                            <div class="col-md-6 text-md-end small">
-                                <a href="#">Privacy Policy</a>
-                                ·
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-            <!-- END: Footer -->
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
