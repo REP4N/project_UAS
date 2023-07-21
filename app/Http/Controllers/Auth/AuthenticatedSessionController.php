@@ -19,7 +19,7 @@ class AuthenticatedSessionController extends Controller
     {
         return view('auth.login');
     }
-    function login(Request $request)
+    public function login(Request $request)
     {
         $request->validate([
            'email' => 'required',
