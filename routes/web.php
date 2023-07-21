@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -94,7 +95,14 @@ Route::get('verify-email', EmailVerificationPromptController::class)
     Route::post('/products/import', [ProductController::class, 'handleImport'])->name('products.handleImport');
     Route::resource('/products', ProductController::class);
 
+// Route POS
+Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
+Route::post('/pos/cart/add', [PosController::class, 'addCartItem'])->name('pos.addCartItem');
+Route::post('/pos/cart/update/{rowId}', [PosController::class, 'updateCartItem'])->name('pos.updateCartItem');
+Route::delete('/pos/cart/delete/{rowId}', [PosController::class, 'deleteCartItem'])->name('pos.deleteCartItem');
+Route::post('/pos/invoice', [PosController::class, 'createInvoice'])->name('pos.createInvoice');
 
+// Route::post('/pos', [OrderController::class, 'createOrder'])->name('pos.createOrder');
     
 
     // User Management
