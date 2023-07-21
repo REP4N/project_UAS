@@ -82,7 +82,7 @@
                 <div class="nav-link-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
                 Products
             </a>
-            <a class="nav-link {{ Request::is('categories*') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ Request::is('categories*') ? 'active' : '' }}" href="{{ route('categories.index') }}">
                 <div class="nav-link-icon"><i class="fa-solid fa-folder"></i></div>
                 Categories
             </a>

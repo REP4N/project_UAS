@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -83,7 +84,7 @@ Route::get('verify-email', EmailVerificationPromptController::class)
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
+    Route::resource('/categories', CategoryController::class);
 
     // Route Products
     Route::get('/products/export', [ProductController::class, 'export'])->name('products.export');
