@@ -19,6 +19,17 @@ class AuthenticatedSessionController extends Controller
     {
         return view('auth.login');
     }
+    function login(Request $request)
+    {
+        $request->validate([
+           'email' => 'required',
+           'password' => 'required' 
+
+        ],[
+            'email.required' => 'Email wajib diisi!',
+            'password.required' => 'Password wajib diisi!'
+        ] ); 
+    }
 
     /**
      * Handle an incoming authentication request.
