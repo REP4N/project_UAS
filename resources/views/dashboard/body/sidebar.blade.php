@@ -86,7 +86,7 @@
                 <div class="nav-link-icon"><i class="fa-solid fa-folder"></i></div>
                 Categories
             </a>
-            <a class="nav-link {{ Request::is('units*') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ Request::is('units*') ? 'active' : '' }}" href="{{ route('units.index') }}">
                 <div class="nav-link-icon"><i class="fa-solid fa-folder"></i></div>
                 Units
             </a>
