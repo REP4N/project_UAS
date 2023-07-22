@@ -18,34 +18,34 @@ class AuthenticatedSessionController extends Controller
     public function create(): View
     {
         return view('auth.login');
-    }
-    
-    public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+    }  
 
-        if (Auth::attempt($credentials)) {
-            // Authentication passed
-            return redirect()->intended('/dashboard');
-        } else {
-            // Authentication failed
-            return back()->withInput()->withErrors(['email' => 'Invalid credentials']);
-        }
-    }
+    //public function login (Request $request) {
+       // $credentials = $request->validate([
+            //'email' => 'required|email:dns',
+          //  'password' => 'required'
+        //]
+
+       // );
+
+       // if(Auth::attempt($credentials))
+        //{
+           // $request->session()->regenerate();
+
+           // return redirect()->intended(footer);
+        //}
+    //}
 
     /**
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request): RedirectResponse
-    {
+   {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+       return redirect()->intended(HOME);
     }
 
     /**
