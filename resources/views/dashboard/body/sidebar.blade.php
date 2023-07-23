@@ -28,8 +28,6 @@
                 Due
             </a>
             <!-- Sidenav Heading (Purchases)-->
-        
-
             <!-- Sidenav Accordion (Pages)-->
             {{-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                 <div class="nav-link-icon"><i data-feather="grid"></i></div>
