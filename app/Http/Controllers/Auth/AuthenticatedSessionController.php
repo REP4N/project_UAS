@@ -19,22 +19,6 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }  
 
-    //public function login (Request $request) {
-       // $credentials = $request->validate([
-            //'email' => 'required|email:dns',
-          //  'password' => 'required'
-        //]
-
-       // );
-
-       // if(Auth::attempt($credentials))
-        //{
-           // $request->session()->regenerate();
-
-           // return redirect()->intended(footer);
-        //}
-    //}
-
     /**
      * Handle an incoming authentication request.
      */
@@ -44,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-       return redirect()->intended('dashboard');
+       return redirect()->intended('user');
     }
 
     /**
