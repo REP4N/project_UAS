@@ -57,7 +57,7 @@
                 <div class="nav-link-icon"><i class="fa-solid fa-users"></i></div>
                 Customers
             </a>
-            <a class="nav-link {{ Request::is('suppliers*') ? 'active' : '' }}" href="#">
+            <a class="nav-link {{ Request::is('suppliers*') ? 'active' : '' }}" href="suppliers">
                 <div class="nav-link-icon"><i class="fa-solid fa-users"></i></div>
                 Suppliers
             </a>
