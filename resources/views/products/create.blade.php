@@ -78,7 +78,9 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="category_id">Product category <span class="text-danger">*</span></label>
                                 <select class="form-select form-control-solid @error('category_id') is-invalid @enderror" id="category_id" name="category_id">
-                                    <option selected="" disabled="">Select a category:</option>
+                                    <option value="furniture">furniture</option>
+                                    <option value="elektronic">elektronik</option>
+                                    <option value="Sport" >Sport</option>
                                     @foreach ($categories as $category)
                                     <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected="selected" @endif>{{ $category->name }}</option>
                                     @endforeach
@@ -93,7 +95,11 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="unit_id">Unit <span class="text-danger">*</span></label>
                                 <select class="form-select form-control-solid @error('unit_id') is-invalid @enderror" id="unit_id" name="unit_id">
-                                    <option selected="" disabled="">Select a unit:</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" >3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>             
                                     @foreach ($units as $unit)
                                     <option value="{{ $unit->id }}" @if(old('unit_id') == $unit->id) selected="selected" @endif>{{ $unit->name }}</option>
                                     @endforeach
