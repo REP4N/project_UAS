@@ -6,7 +6,7 @@ use App\Models\Product;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Gloudemans\Shoppingcart\Facades\Cart;
+// use Gloudemans\Shoppingcart\Facades\Cart;
 
 class PosController extends Controller
 {
@@ -51,12 +51,12 @@ class PosController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        Cart::add([
-            'id' => $validatedData['id'],
-            'name' => $validatedData['name'],
-            'qty' => 1,
-            'price' => $validatedData['price']
-        ]);
+        // Cart::add([
+        //     'id' => $validatedData['id'],
+        //     'name' => $validatedData['name'],
+        //     'qty' => 1,
+        //     'price' => $validatedData['price']
+        // ]);
 
         return Redirect::back()->with('success', 'Product has been added to cart!');
     }
@@ -72,7 +72,7 @@ class PosController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        Cart::update($rowId, $validatedData['qty']);
+        // Cart::update($rowId, $validatedData['qty']);
 
         return Redirect::back()->with('success', 'Product has been updated from cart!');
     }
@@ -82,7 +82,7 @@ class PosController extends Controller
      */
     public function deleteCartItem(String $rowId)
     {
-        Cart::remove($rowId);
+        // Cart::remove($rowId);
 
         return Redirect::back()->with('success', 'Product has been deleted from cart!');
     }
@@ -97,12 +97,12 @@ class PosController extends Controller
         ];
 
         $validatedData = $request->validate($rules);
-        $customer = Customer::where('id', $validatedData['customer_id'])->first();
-        $carts = Cart::content();
+        // $customer = Customer::where('id', $validatedData['customer_id'])->first();
+        // $carts = Cart::content();
 
-        return view('pos.create', [
-            'customer' => $customer,
-            'carts' => $carts
-        ]);
+        // return view('pos.create', [
+        //     'customer' => $customer,
+        //     'carts' => $carts
+        // ]);
     }
 }
