@@ -13,7 +13,7 @@
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
                         <div class="page-header-icon"><i class="fa-solid fa-users"></i></div>
-                        Add Supplier
+                        Add Customer
                     </h1>
                 </div>
             </div>
@@ -21,7 +21,7 @@
             <nav class="mt-4 rounded" aria-label="breadcrumb">
                 <ol class="breadcrumb px-3 py-2 rounded mb-0">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('suppliers.index') }}">Suppliers</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Customers</a></li>
                     <li class="breadcrumb-item active">Create</li>
                 </ol>
             </nav>
@@ -32,7 +32,7 @@
 
 <!-- BEGIN: Main Page Content -->
 <div class="container-xl px-2 mt-n10">
-    <form action="{{ route('suppliers.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-xl-4">
@@ -43,7 +43,7 @@
                         <!-- Profile picture image -->
                         <img class="img-account-profile rounded-circle mb-2" src="{{ asset('assets/img/demo/user-placeholder.svg') }}" alt="" id="image-preview" />
                         <!-- Profile picture help block -->
-                        <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 1 MB</div>
+                        <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
                         <!-- Profile picture input -->
                         <input class="form-control form-control-solid mb-2 @error('photo') is-invalid @enderror" type="file"  id="image" name="photo" accept="image/*" onchange="previewImage();">
                         @error('photo')
@@ -56,10 +56,10 @@
             </div>
 
             <div class="col-xl-8">
-                <!-- BEGIN: Supplier Details -->
+                <!-- BEGIN: Customer Details -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        Supplier Details
+                        Customer Details
                     </div>
                     <div class="card-body">
                         <!-- Form Group (name) -->
@@ -82,37 +82,13 @@
                             </div>
                             @enderror
                         </div>
-                        <!-- Form Group (shopname) -->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="shopname">Shopname <span class="text-danger">*</span></label>
-                            <input class="form-control form-control-solid @error('shopname') is-invalid @enderror" id="shopname" name="shopname" type="text" placeholder="" value="{{ old('shopname') }}" />
-                            @error('shopname')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                        <!-- Form Group (phone number) -->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="phone">Phone number <span class="text-danger">*</span></label>
-                            <input class="form-control form-control-solid @error('phone') is-invalid @enderror" id="phone" name="phone" type="text" placeholder="" value="{{ old('phone') }}" />
-                            @error('phone')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
                         <!-- Form Row -->
                         <div class="row gx-3 mb-3">
-                            <!-- Form Group (type of supplier) -->
+                            <!-- Form Group (phone number) -->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="type">Type of supplier <span class="text-danger">*</span></label>
-                                <select class="form-select form-control-solid @error('type') is-invalid @enderror" id="type" name="type">
-                                    <option selected="" disabled="">Select a type:</option>
-                                    <option value="Distributor" @if(old('type') == 'Distributor')selected="selected"@endif>Distributor</option>
-                                    <option value="Whole Seller" @if(old('type') == 'Whole Seller')selected="selected"@endif>Whole Seller</option>
-                                </select>
-                                @error('type')
+                                <label class="small mb-1" for="phone">Phone number <span class="text-danger">*</span></label>
+                                <input class="form-control form-control-solid @error('phone') is-invalid @enderror" id="phone" name="phone" type="text" placeholder="" value="{{ old('phone') }}" />
+                                @error('phone')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -171,11 +147,11 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button class="btn btn-primary" type="submit">Save</button>
-                        <a class="btn btn-danger" href="{{ route('suppliers.index') }}">Cancel</a>
+                        <button class="btn btn-primary" type="submit">Add</button>
+                        <a class="btn btn-danger" href="{{ route('customers.index') }}">Cancel</a>
                     </div>
                 </div>
-                <!-- END: Supplier Details -->
+                <!-- END: Customer Details -->
             </div>
         </div>
     </form>
