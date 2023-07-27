@@ -110,9 +110,9 @@
                                         </div>
                                     </td>
                                     <td>{{ $product->product_name }}</td>
-                                    <td>{{ $product->category->name }}</td>
+                                    <td>{{ $product->category }}</td>
                                     <td>{{ $product->stock }}</td>
-                                    <td>{{ $product->unit->name }}</td>
+                                    <td>{{ $product->unit }}</td>
                                     <td>{{ $product->selling_price }}</td>
                                     <td>
                                         <div class="d-flex">

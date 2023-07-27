@@ -21,4 +21,12 @@ class Product extends Model
         'product_image',
     ];
 
+    public function category() {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function unit() {
+        return $this->belongsTo(Product::class);
+    }
+    
 }

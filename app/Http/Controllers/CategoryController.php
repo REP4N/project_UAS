@@ -49,7 +49,11 @@ class CategoryController extends Controller
         ];
 
         // $validatedData = $request->validate($rules);
-
+        $category = Category::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+          
+        ]);
         // Category::create($validatedData);
 
         return Redirect::route('categories.index')->with('success', 'Category has been created!');
