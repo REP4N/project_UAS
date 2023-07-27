@@ -13,7 +13,7 @@
                 <div class="col-auto mt-4">
                     <h1 class="page-header-title">
                         <div class="page-header-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                        Add Product
+                        Tambah Produk
                     </h1>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class="col-xl-4">
                 <!-- Product image card-->
                 <div class="card mb-4 mb-xl-0">
-                    <div class="card-header">Product Image</div>
+                    <div class="card-header">Gambar Produk</div>
                     <div class="card-body text-center">
                         <!-- Product image -->
                         <img class="img-account-profile mb-2" src="{{ asset('assets/img/products/default.webp') }}" alt="" id="image-preview" />
@@ -64,7 +64,7 @@
                     <div class="card-body">
                         <!-- Form Group (product name) -->
                         <div class="mb-3">
-                            <label class="small mb-1" for="product_name">Product name <span class="text-danger">*</span></label>
+                            <label class="small mb-1" for="product_name">Nama Produk <span class="text-danger">*</span></label>
                             <input class="form-control form-control-solid @error('product_name') is-invalid @enderror" id="product_name" name="product_name" type="text" placeholder="" value="{{ old('product_name') }}" autocomplete="off"/>
                             @error('product_name')
                             <div class="invalid-feedback">
@@ -76,11 +76,11 @@
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (type of product category) -->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="category_id">Product category <span class="text-danger"></span></label>
+                                <label class="small mb-1" for="category_id">Kategori Produk <span class="text-danger"></span></label>
                                 <select class="form-select form-control-solid @error('category_id') is-invalid @enderror" id="category_id" name="category_id">
-                                    <!-- <option value="1">furniture</option>
+                                    <option value="1">Ekonomi</option>
                                     <option value="2">elektronik</option>
-                                    <option value="3" >Sport</option> -->
+                                    <option value="3" >Olahraga</option> 
                                     @foreach ($categories as $category)
                                     <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected="selected" @endif>{{ $category->name }}</option>
                                     @endforeach
@@ -95,11 +95,11 @@
                             <div class="col-md-6">
                                 <label class="small mb-1" for="unit_id">Unit <span class="text-danger">*</span></label>
                                 <select class="form-select form-control-solid @error('unit_id') is-invalid @enderror" id="unit_id" name="unit_id">
-                                    <!-- <option value="1">1</option>
+                                    <<option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
-                                    <option value="5">5</option>              -->
+                                    <option value="5">5</option>              
                                     @foreach ($units as $unit)
                                     <option value="{{ $unit->id }}" @if(old('unit_id') == $unit->id) selected="selected" @endif>{{ $unit->name }}</option>
                                     @endforeach
@@ -115,7 +115,7 @@
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (buying price) -->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="buying_price">Buying price <span class="text-danger">*</span></label>
+                                <label class="small mb-1" for="buying_price"> Harga Beli <span class="text-danger">*</span></label>
                                 <input class="form-control form-control-solid @error('buying_price') is-invalid @enderror" id="buying_price" name="buying_price" type="text" placeholder="" value="{{ old('buying_price') }}" autocomplete="off" />
                                 @error('buying_price')
                                 <div class="invalid-feedback">
@@ -125,7 +125,7 @@
                             </div>
                             <!-- Form Group (selling price) -->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="selling_price">Selling price <span class="text-danger">*</span></label>
+                                <label class="small mb-1" for="selling_price">Harga Penjualan <span class="text-danger">*</span></label>
                                 <input class="form-control form-control-solid @error('selling_price') is-invalid @enderror" id="selling_price" name="selling_price" type="text" placeholder="" value="{{ old('selling_price') }}" autocomplete="off" />
                                 @error('selling_price')
                                 <div class="invalid-feedback">
@@ -146,8 +146,8 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button class="btn btn-primary" type="submit">Save</button>
-                        <a class="btn btn-danger" href="{{ route('products.index') }}">Cancel</a>
+                        <button class="btn btn-primary" type="submit">Simpan</button>
+                        <a class="btn btn-danger" href="{{ route('products.index') }}">Batal</a>
                     </div>
                 </div>
                 <!-- END: Product Details -->
