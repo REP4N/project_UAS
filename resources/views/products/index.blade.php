@@ -91,12 +91,12 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">('product_name', 'Product Name')</th>
-                                    <th scope="col">('category.name', 'category')</th>
-                                    <th scope="col">('stock')</th>
-                                    <th scope="col">('unit.name', 'unit')</th>
-                                    <th scope="col">('selling_price', 'Price')</th>
+                                    <th scope="col">Gambar</th>
+                                    <th scope="col">Nama Produk</th>
+                                    <th scope="col">Kategori</th>
+                                    <th scope="col">Stok</th>
+                                    <th scope="col">Unit</th>
+                                    <th scope="col">Harga</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

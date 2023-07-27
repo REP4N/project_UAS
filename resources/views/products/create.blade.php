@@ -59,7 +59,7 @@
                 <!-- BEGIN: Product Details -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        Product Details
+                        Detail Produk
                     </div>
                     <div class="card-body">
                         <!-- Form Group (product name) -->
@@ -79,7 +79,7 @@
                                 <label class="small mb-1" for="category_id">Kategori Produk <span class="text-danger"></span></label>
                                 <select class="form-select form-control-solid @error('category_id') is-invalid @enderror" id="category_id" name="category_id">
                                     <option value="1">Ekonomi</option>
-                                    <option value="2">elektronik</option>
+                                    <option value="2">Elektronik</option>
                                     <option value="3" >Olahraga</option> 
                                     @foreach ($categories as $category)
                                     <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected="selected" @endif>{{ $category->name }}</option>
@@ -136,7 +136,7 @@
                         </div>
                         <!-- Form Group (stock) -->
                         <div class="mb-3">
-                            <label class="small mb-1" for="stock">Stock <span class="text-danger">*</span></label>
+                            <label class="small mb-1" for="stock">Stok <span class="text-danger">*</span></label>
                             <input class="form-control form-control-solid @error('stock') is-invalid @enderror" id="stock" name="stock" type="text" placeholder="" value="{{ old('stock') }}" autocomplete="off" />
                             @error('stock')
                             <div class="invalid-feedback">
