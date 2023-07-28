@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PosController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -101,6 +102,9 @@ Route::post('/pos/cart/add', [PosController::class, 'addCartItem'])->name('pos.a
 Route::post('/pos/cart/update/{rowId}', [PosController::class, 'updateCartItem'])->name('pos.updateCartItem');
 Route::delete('/pos/cart/delete/{rowId}', [PosController::class, 'deleteCartItem'])->name('pos.deleteCartItem');
 Route::post('/pos/invoice', [PosController::class, 'createInvoice'])->name('pos.createInvoice');
+
+// Route Supplier
+Route::get('/suppliers', [SupplierController::class, 'index'])->name('suppliers.index');
 
 // Route::post('/pos', [OrderController::class, 'createOrder'])->name('pos.createOrder');
     
