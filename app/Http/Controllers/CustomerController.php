@@ -20,8 +20,8 @@ class CustomerController extends Controller
             abort(400, 'The per-page parameter must be an integer between 1 and 100.');
         }
 
-        $customers = Customer::filter(request(['search']))
-            ->sortable()
+        $customers = Customers::filter(request(['search']))
+            //->sortable()
             ->paginate($row)
             ->appends(request()->query());
 

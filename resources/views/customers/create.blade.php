@@ -32,7 +32,7 @@
 
 <!-- BEGIN: Main Page Content -->
 <div class="container-xl px-2 mt-n10">
-    <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('customers.create') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-xl-4">

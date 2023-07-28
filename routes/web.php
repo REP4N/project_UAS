@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -109,6 +110,7 @@ Route::get('/suppliers/create', [SupplierController::class, 'create'])->name('su
 
 // Route Customers
 Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+Route::get('/customers/create', [CustomerController::class, 'create'])->name('customers.create');
 
 // Route::post('/pos', [OrderController::class, 'createOrder'])->name('pos.createOrder');
     
