@@ -92,11 +92,11 @@
                                 <tr>
                                     <th scope="col">No.</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">('product_name', 'Product Name')</th>
-                                    <th scope="col">('category.name', 'category')</th>
-                                    <th scope="col">('stock')</th>
-                                    <th scope="col">('unit.name', 'unit')</th>
-                                    <th scope="col">('selling_price', 'Price')</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">category</th>
+                                    <th scope="col">stock</th>
+                                    <th scope="col">unit</th>
+                                    <th scope="col">Price</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

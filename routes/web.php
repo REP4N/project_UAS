@@ -105,6 +105,7 @@ Route::post('/pos/invoice', [PosController::class, 'createInvoice'])->name('pos.
 
 // Route Supplier
 Route::get('/suppliers', [SupplierController::class, 'index'])->name('suppliers.index');
+Route::get('/suppliers/create', [SupplierController::class, 'create'])->name('suppliers.create');
 
 // Route::post('/pos', [OrderController::class, 'createOrder'])->name('pos.createOrder');
     

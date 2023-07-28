@@ -21,7 +21,7 @@ class SupplierController extends Controller
         }
 
         $suppliers = Supplier::filter(request(['search']))
-            ->sortable()
+            //->sortable()
             ->paginate($row)
             ->appends(request()->query());
 

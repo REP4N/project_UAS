@@ -89,9 +89,9 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th scope="col">@sortablelink('name')</th>
-                                    <th scope="col">@sortablelink('email')</th>
-                                    <th scope="col">@sortablelink('shopname')</th>
+                                    <th scope="col">name</th>
+                                    <th scope="col">email</th>
+                                    <th scope="col">shopname</th>
                                     <th scope="col">Phone</th>
                                     <th scope="col">Action</th>
                                 </tr>
