@@ -88,8 +88,8 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th scope="col">@sortablelink('name', 'Unit Name')</th>
-                                    <th scope="col">@sortablelink('slug', 'Unit Slug')</th>
+                                    <th scope="col">Unit Name</th>
+                                    <th scope="col">Unit Slug</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

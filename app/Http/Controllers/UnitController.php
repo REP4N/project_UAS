@@ -50,6 +50,12 @@ class UnitController extends Controller
 
         // $validatedData = $request->validate($rules);
 
+        $unit = Unit::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+          
+        ]);
+
         // Unit::create($validatedData);
 
         return Redirect::route('units.index')->with('success', 'Unit has been created!');
