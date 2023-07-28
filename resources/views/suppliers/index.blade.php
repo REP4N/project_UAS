@@ -89,10 +89,14 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No.</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">name</th>
                                     <th scope="col">email</th>
                                     <th scope="col">shopname</th>
+                                    <th scope="col">bank_name</th>
+                                    <th scope="col">type</th>
                                     <th scope="col">Phone</th>
+                                    <th scope="col">address</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -100,9 +104,17 @@
                                 @foreach ($suppliers as $supplier)
                                 <tr>
                                     <th scope="row">{{ (($suppliers->currentPage() * (request('row') ? request('row') : 10)) - (request('row') ? request('row') : 10)) + $loop->iteration  }}</th>
+                                    <td>
+                                        <div style="max-height: 80px; max-width: 80px;">
+                                            <img class="img-fluid"  src="{{ $supplier->image ? asset('storage/supplier/'.$supplier->image) : asset('assets/img/supplier/default.webp') }}">
+                                        </div>
+                                    </td>
                                     <td>{{ $supplier->name }}</td>
                                     <td>{{ $supplier->email }}</td>
                                     <td>{{ $supplier->shopname }}</td>
+                                    <td>{{ $supplier->bank_name }}</td>
+                                    <td>{{ $supplier->type }}</td>
+                                    <td>{{ $supplier->address }}</td>
                                     <td>{{ $supplier->phone }}</td>
                                     <td>
                                         <div class="d-flex">

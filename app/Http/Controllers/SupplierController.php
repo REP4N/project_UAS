@@ -43,39 +43,44 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = [
-            'photo' => 'image|file|max:1024',
-            'name' => 'required|string|max:50',
-            'email' => 'required|email|max:50|unique:suppliers,email',
-            'phone' => 'required|string|max:25|unique:suppliers,phone',
-            'shopname' => 'required|string|max:50',
-            'type' => 'required|string|max:25',
-            'account_holder' => 'max:50',
-            'account_number' => 'max:25',
-            'bank_name' => 'max:25',
-            'address' => 'required|string|max:100',
-        ];
+        // Validate the incoming request data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:suppliers',
+            'shopname' => 'required|string|max:255',
+            'bank_name' => 'required|string|max:255',
+            'type' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'address' => 'required|string|max:500',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-        $validatedData = $request->validate($rules);
-
-        /**
-         * Handle upload an image
-         */
-        if ($file = $request->file('photo')) {
-            $fileName = hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
-            $path = 'public/suppliers/';
-
-            /**
-             * Store an image to Storage.
-             */
-            $file->storeAs($path, $fileName);
-            $validatedData['photo'] = $fileName;
+        // Handle the image upload (if applicable)
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images');
+        } else {
+            $imagePath = null;
         }
 
-        Supplier::create($validatedData);
+        // Create a new Supplier instance and fill it with the request data
+        $supplier = new Supplier([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'shopname' => $request->input('shopname'),
+            'bank_name' => $request->input('bank_name'),
+            'type' => $request->input('type'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
+            'image' => $imagePath,
+        ]);
 
-        return Redirect::route('suppliers.index')->with('success', 'New supplier has been created!');
+        // Save the new supplier record in the database
+        $supplier->save();
+
+        // Optionally, you can redirect the user back to the table view or any other page
+        return redirect()->route('suppliers.index');
     }
+}
 
     /**
      * Display the specified resource.

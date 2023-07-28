@@ -136,29 +136,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- Form Row -->
-                        <div class="row gx-3 mb-3">
-                            <!-- Form Group (account holder) -->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="account_holder">Account holder</label>
-                                <input class="form-control form-control-solid @error('account_holder') is-invalid @enderror" id="account_holder" name="account_holder" type="text" placeholder="" value="{{ old('account_holder') }}" />
-                                @error('account_holder')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            <!-- Form Group (account_name) -->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="account_number">Account number</label>
-                                <input class="form-control form-control-solid @error('account_number') is-invalid @enderror" id="account_number" name="account_number" type="text" placeholder="" value="{{ old('account_number') }}" />
-                                @error('account_number')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                        </div>
                         <!-- Form Group (address) -->
                         <div class="mb-3">
                                 <label for="address">Address <span class="text-danger">*</span></label>

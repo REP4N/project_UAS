@@ -105,6 +105,7 @@ Route::delete('/pos/cart/delete/{rowId}', [PosController::class, 'deleteCartItem
 Route::post('/pos/invoice', [PosController::class, 'createInvoice'])->name('pos.createInvoice');
 
 // Route Supplier
+Route::post('suppliers', [SupplierController::class, 'store'])->name('suppliers.store');
 Route::get('/suppliers', [SupplierController::class, 'index'])->name('suppliers.index');
 Route::get('/suppliers/create', [SupplierController::class, 'create'])->name('suppliers.create');
 
