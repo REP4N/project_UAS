@@ -130,18 +130,18 @@ class OrderController extends Controller
 
         $validatedData['order_date'] = Carbon::now()->format('Y-m-d');
         $validatedData['order_status'] = 'pending';
-        $validatedData['total_products'] = Cart::count();
-        $validatedData['sub_total'] = Cart::subtotal();
-        $validatedData['vat'] = Cart::tax();
+        $validatedData['total_products'] = Order::count();
+        $validatedData['sub_total'] = Order::subtotal();
+        $validatedData['vat'] = Order::tax();
         $validatedData['invoice_no'] = $invoice_no;
-        $validatedData['total'] = Cart::total();
-        $validatedData['due'] = ((int)Cart::total() - (int)$validatedData['pay']);
+        $validatedData['total'] = Order::total();
+        $validatedData['due'] = ((int)Order::total() - (int)$validatedData['pay']);
         $validatedData['created_at'] = Carbon::now();
 
         $order_id = Order::insertGetId($validatedData);
 
         // Create Order Details
-        $contents = Cart::content();
+        $contents = Order::content();
         $oDetails = array();
 
         foreach ($contents as $content) {

@@ -63,7 +63,7 @@ class ProductController extends Controller
         $rules = [
             'product_image' => 'image|file|max:2048',
             'product_name' => 'required|string',
-            'category_id' => 'required|integer',
+            'category_id' => 'required|string',
             'unit_id' => 'required|integer',
             'stock' => 'required|integer',
             'buying_price' => 'required|integer',
