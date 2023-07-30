@@ -48,13 +48,8 @@ class CategoryController extends Controller
             'slug' => 'required|unique:categories,slug|alpha_dash',
         ];
 
-        // $validatedData = $request->validate($rules);
-        $category = Category::create([
-            'name' => $request->name,
-            'slug' => $request->slug,
-          
-        ]);
-        // Category::create($validatedData);
+        $validatedData = $request->validate($rules);
+        Category::create($validatedData);
 
         return Redirect::route('categories.index')->with('success', 'Category has been created!');
     }

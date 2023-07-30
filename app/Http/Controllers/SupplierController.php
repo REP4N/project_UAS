@@ -25,9 +25,7 @@ class SupplierController extends Controller
             ->paginate($row)
             ->appends(request()->query());
 
-        return view('suppliers.index', [
-            'suppliers' => $suppliers
-        ]);
+        return view('suppliers.index', compact('suppliers'));
     }
 
     /**
@@ -50,8 +48,6 @@ class SupplierController extends Controller
             'phone' => 'required|string|max:25|unique:suppliers,phone',
             'shopname' => 'required|string|max:50',
             'type' => 'required|string|max:25',
-            'account_holder' => 'max:50',
-            'account_number' => 'max:25',
             'bank_name' => 'max:25',
             'address' => 'required|string|max:100',
         ];
@@ -150,7 +146,6 @@ class SupplierController extends Controller
         if($supplier->photo){
             Storage::delete('public/suppliers/' . $supplier->photo);
         }
-
         Supplier::destroy($supplier->id);
 
         return Redirect::route('suppliers.index')->with('success', 'Supplier has been deleted!');

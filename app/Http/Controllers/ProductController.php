@@ -34,9 +34,7 @@ class ProductController extends Controller
                 ->paginate($row)
                 ->appends(request()->query());
 
-        return view('products.index', [
-            'products' => $products,
-        ]);
+        return view('products.index',compact('products'));
     }
 
     /**

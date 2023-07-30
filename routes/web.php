@@ -107,7 +107,10 @@ Route::post('/pos/invoice', [PosController::class, 'createInvoice'])->name('pos.
 // Route Supplier
 Route::post('suppliers', [SupplierController::class, 'store'])->name('suppliers.store');
 Route::get('/suppliers', [SupplierController::class, 'index'])->name('suppliers.index');
+Route::get('/suppliers/{id}', [SupplierController::class, 'update'])->name('suppliers.edit');
 Route::get('/suppliers/create', [SupplierController::class, 'create'])->name('suppliers.create');
+Route::delete('/suppliers/delete/{id}', [SupplierController::class, 'destroy'])->name('suppliers.destroy');
+// Route::resource('suppliers/', SupplierController::class);
 
 // Route Customers
 Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');

@@ -89,7 +89,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th scope="col">Image</th>
+                                    <th scope="col">image</th>
                                     <th scope="col">name</th>
                                     <th scope="col">email</th>
                                     <th scope="col">shopname</th>
